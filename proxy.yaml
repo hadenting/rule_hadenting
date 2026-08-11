@@ -1,60 +1,35 @@
 payload:
   # 代理列表
+  - DOMAIN,jjn.mymxwljsq.top #猫熊域名
 
-  # MyList && Other
-  - DOMAIN-SUFFIX,1password.com
-  - DOMAIN-SUFFIX,adguard.org
-  - DOMAIN-SUFFIX,bit.no.com
-  - DOMAIN-SUFFIX,btlibrary.me
-  - DOMAIN-SUFFIX,cloudcone.com
-  - DOMAIN-SUFFIX,dubox.com
-  - DOMAIN-SUFFIX,gameloft.com
-  - DOMAIN-SUFFIX,garena.com
-  - DOMAIN-SUFFIX,hoyolab.com
-  - DOMAIN-SUFFIX,inoreader.com
-  - DOMAIN-SUFFIX,ip138.com
-  - DOMAIN-SUFFIX,linkedin.com
-  - DOMAIN-SUFFIX,myteamspeak.com
-  - DOMAIN-SUFFIX,notion.so
-  - DOMAIN-SUFFIX,ping.pe
-  - DOMAIN-SUFFIX,reddit.com
-  - DOMAIN-SUFFIX,teddysun.com
-  - DOMAIN-SUFFIX,tumbex.com
-  - DOMAIN-SUFFIX,twdvd.com
-  - DOMAIN-SUFFIX,unsplash.com
-  - DOMAIN-SUFFIX,buzzsprout.com
+  # 一些AI中转站
+  - DOMAIN-SUFFIX,jichang100.com
+  - DOMAIN-SUFFIX,hvoy.ai
+  - DOMAIN-SUFFIX,poolai.online
+  
 
-  # 国外域名
-  - DOMAIN-SUFFIX,eu
-  - DOMAIN-SUFFIX,hk
-  - DOMAIN-SUFFIX,jp
-  - DOMAIN-SUFFIX,kr
-  - DOMAIN-SUFFIX,sg
-  - DOMAIN-SUFFIX,tw
-  - DOMAIN-SUFFIX,uk
-
-  # 国外域名关键字
-  - DOMAIN-KEYWORD,1e100
-  - DOMAIN-KEYWORD,abema
-  - DOMAIN-KEYWORD,appledaily
-  - DOMAIN-KEYWORD,avtb
-  - DOMAIN-KEYWORD,beetalk
-  - DOMAIN-KEYWORD,blogspot
-  - DOMAIN-KEYWORD,dropbox
-  - DOMAIN-KEYWORD,facebook
-  - DOMAIN-KEYWORD,fbcdn
-  - DOMAIN-KEYWORD,github
-  - DOMAIN-KEYWORD,gmail
-  - DOMAIN-KEYWORD,google
-  - DOMAIN-KEYWORD,instagram
-  - DOMAIN-KEYWORD,porn
-  - DOMAIN-KEYWORD,sci-hub
-  - DOMAIN-KEYWORD,spotify
-  - DOMAIN-KEYWORD,telegram
-  - DOMAIN-KEYWORD,twitter
-  - DOMAIN-KEYWORD,whatsapp
-  - DOMAIN-KEYWORD,youtube
-
-  # Top Blocked Sites
-  - DOMAIN-SUFFIX,4sqi.net
-  - DOMAIN-SUFFIX,a248.e.akamai.net
+# ============================================================
+# 域名匹配规则类型对比（适用于 Clash / Surge / Shadowrocket）
+# ============================================================
+# 规则格式：类型, 目标, 策略
+# ============================================================
+#
+# +------------------+-------------------------------------+-----------------------------------+
+# | 规则类型           | 匹配逻辑                            | 示例                               |
+# +------------------+-------------------------------------+-----------------------------------+
+# | DOMAIN            | 完整域名精确匹配                      | DOMAIN, www.google.com, PROXY     |
+# +------------------+-------------------------------------+-----------------------------------+
+# | DOMAIN-SUFFIX     | 域名后缀匹配（含所有子域名）           | DOMAIN-SUFFIX, google.com, PROXY  |
+# +------------------+-------------------------------------+-----------------------------------+
+# | DOMAIN-KEYWORD    | 域名中包含关键词即可                   | DOMAIN-KEYWORD, google, PROXY     |
+# +------------------+-------------------------------------+-----------------------------------+
+# | DOMAIN-SET        | 从外部规则集文件中匹配（含精确/后缀等） | DOMAIN-SET, rules.txt, PROXY      |
+# +------------------+-------------------------------------+-----------------------------------+
+#
+# ============================================================
+# 说明：
+# 1. DOMAIN-SUFFIX 会匹配 google.com 以及所有子域名（如 mail.google.com）
+# 2. DOMAIN 只匹配 www.google.com，不会匹配 mail.google.com
+# 3. DOMAIN-KEYWORD 只要域名里包含 google 就匹配（如 content-google.com）
+# 4. DOMAIN-SET 需要额外准备规则集文件，里面可混合多种匹配方式
+# ============================================================
