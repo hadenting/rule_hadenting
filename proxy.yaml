@@ -3,9 +3,12 @@ payload:
   - DOMAIN,jjn.mymxwljsq.top #猫熊域名
 
   # 一些AI中转站
-  - DOMAIN-SUFFIX,jichang100.com
   - DOMAIN-SUFFIX,hvoy.ai
   - DOMAIN-SUFFIX,poolai.online
+
+  # 机场
+  - DOMAIN-SUFFIX,jichang100.com
+  - DOMAIN-SUFFIX,taishan.app
   
 
 # ============================================================
